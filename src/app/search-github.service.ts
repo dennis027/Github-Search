@@ -9,7 +9,8 @@ import{ Repository} from './repository';
 export class SearchGithubService {
  user!: User;
  repository!: Repository;
- repoData =[]
+ repoData =[];
+ newUserData : any = [];
   constructor(private http: HttpClient) {
     this.user = new User("",0,"","",new Date());
     this.repository= new Repository( "","",new Date(),"","");
@@ -32,11 +33,27 @@ export class SearchGithubService {
         this.user.login = response.login;
         this.user.avator_url = response.avatar_url;
         this.user.created_at = response.created_at;
-       })
+
+        resolve()
+      },
+      error=>{
+
+        reject(error)
+      })
+      this.http.get<any> ("https://api.github.com/users/" + usernames +"/repos").toPromise().then(response =>{
+        for(let i=0; i<response.length; i++){
+          this.newUserData = new Repository( response[i].name,response[1].description , response[i].update_at, response[i].clone_url, response[i].language)
+          this.repoData.push;{this.newUserData};
+        }
+
+        resolve()
       
-       
-       resolve()
-       
-     })
-   }
+      },(error: any) =>{
+        reject(error);
+      })
+
+     
+    })
+    return promise
+  }
 }
