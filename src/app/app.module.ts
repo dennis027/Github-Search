@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GitFormComponent } from './git-form/git-form.component';
 import { GitResultComponent } from './git-result/git-result.component';
+import { DateCountPipe } from './date-count.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     GitFormComponent,
-    GitResultComponent
+    GitResultComponent,
+    DateCountPipe
   ],
   imports: [
     BrowserModule,

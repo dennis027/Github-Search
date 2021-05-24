@@ -9,7 +9,7 @@ import{ Repository} from './repository';
 export class SearchGithubService {
  user!: User;
  repository!: Repository;
- repoData =[];
+ repoData =[ ];
  newUserData : any = [];
   constructor(private http: HttpClient) {
     this.user = new User("",0,"","",new Date());
@@ -27,7 +27,7 @@ export class SearchGithubService {
      
    
      let promise = new Promise <void>((resolve,reject)=>{
-      this.http.get<ApiResponse>("https://api.github.com/users/" + usernames).toPromise().then (response=>{
+      this.http.get< ApiResponse >("https://api.github.com/users/" + usernames).toPromise().then (response=>{
         this.user.bio = response.bio;
         this.user.public_repos = response.public_repos;
         this.user.login = response.login;

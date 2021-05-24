@@ -1,1 +1,17 @@
-<p>git-result works!</p>
+<div>
+    <h4>{{}user.login}</h4>
+        <img src="{{user.avatar_url"}} alt="">
+        <p>Bio {{user.bio}}</p>
+        <p>Date created {{user.created_at|date|uppercase}}</p>
+        <p>no of Repos {{user.public_repos}}</p>
+    
+</div>
+
+<div>
+    <div *ngFor = 'let repoDetail of repoDetails'>
+        <h4>{{repoDetail.name}} | {{repoDetail.clone_url}}</h4>
+        <p>{{repoDetail.description}}</p>
+        <small>{{repoDetail.language}}</small>
+        <small>{{repoDetail.updated_at|date|uppercase}}</small>
+    </div>
+</div> 
