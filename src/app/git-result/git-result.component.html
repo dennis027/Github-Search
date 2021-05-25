@@ -1,5 +1,5 @@
 <div>
-    <h4>{{}user.login}</h4>
+    <h4>{{user.login}}</h4>
         <img src="{{user.avatar_url"}} alt="">
         <p>Bio {{user.bio}}</p>
         <p>Date created {{user.created_at|date|uppercase}}</p>
@@ -8,10 +8,12 @@
 </div>
 
 <div>
-    <div *ngFor = 'let repoDetail of repoDetails'>
-        <h4>{{repoDetail.name}} | {{repoDetail.clone_url}}</h4>
-        <p>{{repoDetail.description}}</p>
-        <small>{{repoDetail.language}}</small>
+    <!-- <div *ngFor = 'let repoDetail of repoDetails'>
+        <h4>{{repoDetails.name}} | {{repoDetail.clone_url}}</h4>
+        <p>{{repoDetails.description}}</p>
+        <small>{{repoDetails.language}}</small>
         <small>{{repoDetail.updated_at|date|uppercase}}</small>
-    </div>
+    </div> -->
 </div> 
+
+

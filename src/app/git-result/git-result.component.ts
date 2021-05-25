@@ -22,7 +22,7 @@ export class GitResultComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.searchGithubService.user;
-    this.repoDetails = this.searchGithubService.repoData;
+    this.repoDetails!= this.searchGithubService.repoData;
   }
 
 }
