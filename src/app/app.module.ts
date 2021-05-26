@@ -1,28 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { GitFormComponent } from './git-form/git-form.component';
-import { GitResultComponent } from './git-result/git-result.component';
-import { DateCountPipe } from './date-count.pipe';
-import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SearchService } from './search.service';
 
+
+import { AppComponent } from './app.component';
+import { SearchComponent } from './search/search.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    GitFormComponent,
-    GitResultComponent,
-    DateCountPipe
+    SearchComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    HttpClientModule,
     FormsModule,
-    HttpClientModule
   ],
-  providers: [],
+  providers: [SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
