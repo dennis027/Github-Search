@@ -1,0 +1,56 @@
+
+<div class="container">
+   <div class="panel panel-default">
+       <div class="search heading">
+         <h3>GitSearch Engine </h3>
+         <form (ngSubmit)='userSubmit()'>
+          <input type="text" name="userName" class="form-control" placeholder="Enter your Username"[(ngModel)]=userName>
+          <button class="btn btn-outline-success btn-sm" type="submit">Fetch Github by UserName</button>
+        </form>
+         <br>
+     </div>
+   </div>
+
+
+  <div class="row">
+    <div class="col-md-6" id="about">
+      <h4>About This Application</h4>
+      <p>A website where users may enter a GitHub username into a form, submit it, and see names and descriptions of that person's public repositories. A person can also look for repositories</p>
+    </div>
+    <div class="col-md-6">
+      <p>Users Picture</p>
+    <img id="img" src ="{{search.avatar_url}}">
+
+  <div class="panel-body">
+
+  <div class="row">
+  
+      <ul>
+        <span class= "select">About:</span><p class="list-group-item" *ngIf="search.bio">{{search.bio}}</p>
+        <span class= "select">Twitter_Handle:</span><p class="list-group-item" *ngIf="search.twitter_username">{{search.twitter_username}}</p>
+        <span class= "select">Where Located:</span><p class="list-group-item" *ngIf="search.location">{{search.location}}</p>
+        <span class= "select">Status:</span><p class="list-group-item" *ngIf="search.hireable">{{search.hireable}}</p>
+        <span class= "select">Account Created on :</span><p class="list-group-item" *ngIf="search.created_at">{{search.created_at|date|uppercase}}</p>
+        <span class= "select">Updated at:</span><p class="list-group-item" *ngIf="search.updated_at">{{search.updated_at |date|uppercase}}</p>
+      
+
+      </ul>
+          
+    
+  </div>
+<div class="col-sm-4">
+  <p>
+    <span class="label label-default">{{search.followers}} followers</span><br>
+    <span class="label label-primary">{{search.following}} following</span>
+    <span class="label label-secondary">{{search.public_gist}}</span>
+    <span class="label label-primary">{{search.public_repo}}</span>
+  </p>
+</div>
+</div>
+
+    </div>
+  </div>
+
+    
+
+
