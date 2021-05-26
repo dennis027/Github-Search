@@ -1,0 +1,37 @@
+*{
+  text-align: center;
+  
+}
+.select{
+  color: #fff;
+  display: block
+}
+
+#img{
+  border-radius: 50%;
+  width: 180px;
+}
+h3{
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 5px;
+}
+.col-sm-4{
+color: whitesmoke;
+}
+#large{
+  font-size: medium;
+  font-weight: bold;
+  color: white;
+
+}
+.p{
+  color: chartreuse;
+}
+.click{
+  color:rgb(189, 32, 32);
+}
+#about{
+  color:rgb(255, 255, 255);
+}
